@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import pokemon from './pokemon.png';
+import pikachuHangman from './pikachu-hangman.png';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div className="parent">
+      <div className="header border">
+        <img src={pokemon} className='header-left header-image' alt='Pokemon' />
+        <img src={pikachuHangman} className='header-right header-image' alt='Pokemon' />
+      </div>
+      <div className="footer border">Footer</div>
+      <div className="pokemon-picture border">Poke Picture</div>
+      <div className="keyboard border">Keyboard</div>
+      <div className="hangman border">Hangman</div>
+      <div className="letter-lines border">Letter lines</div>
     </div>
+
   );
 }
 

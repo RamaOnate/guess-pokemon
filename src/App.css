@@ -24,7 +24,7 @@
 }
 
 .footer { grid-area: 6 / 1 / 7 / 3; }
-.pokemon-picture { grid-area: 2 / 1 / 4 / 2; }
+.pokemon-picture-container { grid-area: 2 / 1 / 4 / 2; }
 .keyboard { grid-area: 4 / 1 / 6 / 2; }
 .hangman { grid-area: 2 / 2 / 5 / 3; }
 .letter-lines { grid-area: 5 / 2 / 6 / 3; }
@@ -54,4 +54,17 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.black {
+  filter: brightness(0%);
+}
+
+.pokemon-picture{
+  background-image: url('https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif');
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20%;
 }

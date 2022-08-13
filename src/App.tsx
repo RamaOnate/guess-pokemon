@@ -9,7 +9,9 @@ function App() {
         <div className="hanging-pikachu header-image border" />
       </div>
       <div className="footer border">Footer</div>
-      <div className="pokemon-picture border">Poke Picture</div>
+      <div className="pokemon-picture-container border">
+        <div className="black pokemon-picture" />
+      </div>
       <div className="keyboard border">Keyboard</div>
       <div className="hangman border">Hangman</div>
       <div className="letter-lines border">Letter lines</div>

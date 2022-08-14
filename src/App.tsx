@@ -1,20 +1,17 @@
 import './App.css';
+import Header from './components/Header';
+import PokemonPicture from './components/PokemonPicture';
 
 function App() {
   return (
 
     <div className="parent">
-      <div className="header border">
-        <div className="pokemon-logo header-image border" />
-        <div className="hanging-pikachu header-image border" />
-      </div>
-      <div className="footer border">Footer</div>
-      <div className="pokemon-picture-container border">
-        <div className="black pokemon-picture" />
-      </div>
+      <Header />
+      <PokemonPicture />
       <div className="keyboard border">Keyboard</div>
       <div className="hangman border">Hangman</div>
       <div className="letter-lines border">Letter lines</div>
+      <div className="footer border">Footer</div>
     </div>
 
   );

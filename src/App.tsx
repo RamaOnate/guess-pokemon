@@ -1,6 +1,10 @@
 import './App.css';
 import Header from './components/Header';
 import PokemonPicture from './components/PokemonPicture';
+import Keyboard from './components/Keyboard';
+import Hangman from './components/Hangman';
+import Letters from './components/Letters';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -8,10 +12,10 @@ function App() {
     <div className="parent">
       <Header />
       <PokemonPicture />
-      <div className="keyboard border">Keyboard</div>
-      <div className="hangman border">Hangman</div>
-      <div className="letter-lines border">Letter lines</div>
-      <div className="footer border">Footer</div>
+      <Keyboard />
+      <Hangman />
+      <Letters />
+      <Footer />
     </div>
 
   );

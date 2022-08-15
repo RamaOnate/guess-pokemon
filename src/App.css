@@ -27,7 +27,7 @@
 .pokemon-picture-container { grid-area: 2 / 1 / 4 / 2; }
 .keyboard { grid-area: 4 / 1 / 6 / 2; }
 .hangman { grid-area: 2 / 2 / 5 / 3; }
-.letter-lines { grid-area: 5 / 2 / 6 / 3; }
+.letters { grid-area: 5 / 2 / 6 / 3; }
   
 .border {
   border-color: mediumpurple;  

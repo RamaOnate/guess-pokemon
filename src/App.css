@@ -61,7 +61,6 @@
 }
 
 .pokemon-picture{
-  background-image: url('https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif');
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;

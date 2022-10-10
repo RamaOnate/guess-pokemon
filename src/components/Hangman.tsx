@@ -3,11 +3,14 @@ import { PokemonContext } from "../App"
 
 const Hangman = () => {
 
-    const { pokemon } = React.useContext(PokemonContext)
+    const { wrongGuesses } = React.useContext(PokemonContext)
 
     return (
         <div className="hangman border">
-            <div className="pokemon-picture" style={{ backgroundImage: `url('${pokemon.image}')` }} />
+            <div className="centered-counter">
+                <div className="pokemon-picture-container">{wrongGuesses} / 6</div>
+                <div className="pokemon-picture-container">Wrong guesses</div>
+            </div>
         </div>
     )
 }

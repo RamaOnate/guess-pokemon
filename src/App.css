@@ -1,8 +1,11 @@
 @import "../node_modules/nes.css/css/nes.css";
 @import url('http://fonts.cdnfonts.com/css/pokemon-solid');
 
-.parent {
-  
+* {
+  font-family: 'Pokemon Solid';
+}
+
+.parent {  
   display: grid;
   grid-template-columns: repeat(2, 50%);
   grid-template-rows: 10% repeat(4, 20%) 10%;
@@ -13,8 +16,7 @@
   background-size: cover;
   background-position: center;
   min-height: 100vh;
-  
-  }
+}
   
 .header { 
   grid-area: 1 / 1 / 2 / 3; 
@@ -23,7 +25,14 @@
   justify-content: space-between;
 }
 
-.footer { grid-area: 6 / 1 / 7 / 3; }
+.footer { 
+  grid-area: 6 / 1 / 7 / 3; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 50px;
+  padding-right: 50px;
+}
 .pokemon-picture-container { grid-area: 2 / 1 / 4 / 2; }
 .keyboard { 
   grid-area: 4 / 1 / 6 / 2; 
@@ -33,7 +42,6 @@
   align-items: center;
   height: 100%;
   font-size: medium;
-  font-family: 'Pokemon Solid';
   padding: 5%;
 }
 .hangman { grid-area: 2 / 2 / 5 / 3; }
@@ -85,7 +93,6 @@
   align-items: center;
   height: 100%;
   font-size: xx-large;
-  font-family: 'Pokemon Solid';
   color: #412750;
   padding-left: 10%;
   padding-right: 10%;
@@ -98,8 +105,7 @@
   align-items: center;
   height: 100%;
   width: 100%;
-  font-size: x-large;
-  font-family: 'Pokemon Solid';  
+  font-size: x-large; 
 }
 
 .key-box:hover {
@@ -110,4 +116,26 @@
 .disabled-text-key {
   color: #505558;
   opacity: 0.3;
+}
+
+.game-over-modal {  
+  font-size: xx-large;
+  color: #412750;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  /* space lines of text */ 
+  line-height: 3;
+}
+
+.play-again-button {
+  font-size: xx-large;
+  color: #412750;
+  padding-left: 10%;
+  padding-right: 10%;  
+}
+
+.btn-text-centered {
 }

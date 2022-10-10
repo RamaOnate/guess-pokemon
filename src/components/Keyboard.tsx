@@ -3,15 +3,16 @@ import { PokemonContext } from "../App"
 
 const Keyboard = () => {
 
-    const { lettersSelected } = React.useContext(PokemonContext)
+    const { lettersSelected, setLettersSelected } = React.useContext(PokemonContext)
 
 
     const handleSelectedKey = (event: any) => {
-        const letterClickd = event.target.innerText.toLowerCase()
+        const letterClicked = event.target.innerText.toLowerCase()
 
         // push unique letters to lettersSelected
-        if (!lettersSelected.includes(letterClickd)) {
-            lettersSelected.push(letterClickd)
+        if (!lettersSelected.includes(letterClicked)) {
+            setLettersSelected([...lettersSelected, letterClicked])
+            console.log(lettersSelected)
         }
         event.target.classList.add("disabled-text-key")
         event.target.classList.remove("key-box")

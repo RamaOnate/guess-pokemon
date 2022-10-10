@@ -44,7 +44,9 @@
   font-size: medium;
   padding: 5%;
 }
-.hangman { grid-area: 2 / 2 / 5 / 3; }
+.hangman { 
+  grid-area: 2 / 2 / 5 / 3;
+}
 .letters { grid-area: 5 / 2 / 6 / 3; }
   
 .border {
@@ -137,5 +139,14 @@
   padding-right: 10%;  
 }
 
-.btn-text-centered {
+.centered-counter{
+  /* center inside the container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-size: xx-large;
+  color: #412750;
 }

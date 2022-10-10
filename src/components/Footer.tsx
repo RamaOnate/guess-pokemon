@@ -12,9 +12,8 @@ const Footer = () => {
 
     return (
         <div className="footer border">
-            {/* switch to */}
             <div><button type="button" className="nes-btn is-success" onClick={showPokemon}>Show Pokemon</button></div>
-            <div><a href="https://github.com/RamaOnate/guess-pokemon" ><i className="nes-icon github is-large"></i></a></div>
+            <div><a href="https://github.com/RamaOnate/guess-pokemon" ><i className="nes-icon github is-medium"></i></a></div>
         </div>
     )
 }

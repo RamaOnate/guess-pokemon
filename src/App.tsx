@@ -40,7 +40,9 @@ function App() {
 
   const [guessedLetters, setGuessedLetters] = React.useState<string[]>(Array(pokemon.name.length).fill("_"))
   const [wrongGuesses, setWrongGuesses] = React.useState<number>(0)
+  const [correctGuesses, setCorrectGuesses] = React.useState<number>(0)
   const [lettersSelected, setLettersSelected] = React.useState<string[]>([])
+  const [reasonGameEnded, setReasonGameEnded] = React.useState<'lost' | 'won' | 'in progress'>('in progress')
 
   const [gameOver, setGameOver] = React.useState<boolean>(false)
 
@@ -60,6 +62,7 @@ function App() {
       const lastLetter = lettersSelected[lettersSelected.length - 1]
       if (pokemon.name.includes(lastLetter)) {
         updateGuessedLetters(lastLetter)
+        setCorrectGuesses(correctGuesses + 1)
       } else {
         setWrongGuesses(wrongGuesses + 1)
       }
@@ -69,9 +72,16 @@ function App() {
   React.useEffect(() => {
     if (wrongGuesses === 6) {
       setGameOver(true)
+      setReasonGameEnded('lost')
     }
   }, [wrongGuesses])
 
+  React.useEffect(() => {
+    if (correctGuesses === pokemon.name.length) {
+      setGameOver(true)
+      setReasonGameEnded('won')
+    }
+  }, [correctGuesses])
 
   return (
     <div className="parent">
@@ -83,13 +93,14 @@ function App() {
         wrongGuesses: wrongGuesses
       }}>
         {/* display modal when game over */}
-        {gameOver ? <div className="modal">
-          <div className="game-over-modal">
-            <h1>Game Over!</h1>
-            <p>The correct pokemon was {pokemon.name}</p>
-            <div onClick={() => window.location.reload()}>Play Again</div>
-          </div>
-        </div> :
+        {gameOver ?
+          <div className="modal">
+            <div className="game-over-modal">
+              <h1>You {reasonGameEnded}!</h1>
+              <p>The correct pokemon was {pokemon.name}</p>
+              <div onClick={() => window.location.reload()}>Play Again</div>
+            </div>
+          </div> :
           <>
             <Header />
             <PokemonPicture />

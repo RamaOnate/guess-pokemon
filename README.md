@@ -1,4 +1,4 @@
-# Guess the Pokemon
+### Guess the Pokemon
 
 This challenge is part of the [Interview challenges](https://github.com/goncy/interview-challenges) created by [Goncy](https://github.com/goncy).
 

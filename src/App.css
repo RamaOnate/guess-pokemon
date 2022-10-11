@@ -49,11 +49,11 @@
 }
 .letters { grid-area: 5 / 2 / 6 / 3; }
   
-.border {
+/* .border {
   border-color: mediumpurple;  
   border-style: solid;
   border-width: 5px;
-}
+} */
 
 .pokemon-logo {
   background-image: url('./pokemon.png');

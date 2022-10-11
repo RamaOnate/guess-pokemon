@@ -46,29 +46,6 @@ function App() {
 
   const [gameOver, setGameOver] = React.useState<boolean>(false)
 
-  /* replace guessedLetters that have _ with the guessed letter */
-  const updateGuessedLetters = (letter: string) => {
-    const newGuessedLetters = [...guessedLetters]
-    for (let i = 0; i < pokemon.name.length; i++) {
-      if (pokemon.name[i] === letter) {
-        newGuessedLetters[i] = letter
-      }
-    }
-    setGuessedLetters(newGuessedLetters)
-  }
-
-  React.useEffect(() => {
-    if (lettersSelected.length > 0) {
-      const lastLetter = lettersSelected[lettersSelected.length - 1]
-      if (pokemon.name.includes(lastLetter)) {
-        updateGuessedLetters(lastLetter)
-        setCorrectGuesses(correctGuesses + 1)
-      } else {
-        setWrongGuesses(wrongGuesses + 1)
-      }
-    }
-  }, [lettersSelected])
-
   React.useEffect(() => {
     if (wrongGuesses === 6) {
       setGameOver(true)
@@ -82,6 +59,25 @@ function App() {
       setReasonGameEnded('won')
     }
   }, [correctGuesses])
+
+  React.useEffect(() => {
+    if (lettersSelected.length > 0) {
+      const letter = lettersSelected[lettersSelected.length - 1]
+      if (pokemon.name.includes(letter)) {
+        const newGuessedLetters = [...guessedLetters]
+        for (let i = 0; i < pokemon.name.length; i++) {
+          if (pokemon.name[i] === letter) {
+            newGuessedLetters[i] = letter
+          }
+        }
+        setGuessedLetters(newGuessedLetters)
+        /* set correct guesses to amount of letters word has */
+        setCorrectGuesses(correctGuesses + pokemon.name.split(letter).length - 1)
+      } else {
+        setWrongGuesses(wrongGuesses + 1)
+      }
+    }
+  }, [lettersSelected])
 
   return (
     <div className="parent">

@@ -10,8 +10,6 @@ const Hangman = () => {
             <div>
                 <img className="hangman-image-container" src={wrongGuesses < 8 ? require(`../img/hangman${wrongGuesses}.png`) : ''} alt="hangman" />
             </div>
-            <div> {wrongGuesses} / 8</div>
-            <div> Aciertos incorrectos</div>
         </div>
     )
 }

@@ -47,7 +47,7 @@ function App() {
   const [gameOver, setGameOver] = React.useState<boolean>(false)
 
   React.useEffect(() => {
-    if (wrongGuesses === 6) {
+    if (wrongGuesses === 8) {
       setGameOver(true)
       setReasonGameEnded('lost')
     }

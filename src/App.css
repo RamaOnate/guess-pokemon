@@ -29,6 +29,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-height: 75px;
 }
 
 .footer { 
@@ -38,8 +39,11 @@
   justify-content: space-between;
   padding-left: 50px;
   padding-right: 50px;
+  min-height: 75px;
 }
-.pokemon-picture-container { grid-area: 2 / 1 / 4 / 2; }
+.pokemon-picture-container { 
+  grid-area: 2 / 1 / 4 / 2;
+}
 .keyboard { 
   grid-area: 4 / 1 / 6 / 2; 
   display: flex;
@@ -52,6 +56,13 @@
 }
 .hangman { 
   grid-area: 2 / 2 / 5 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  font-size: medium;
+  padding: 5%;
 }
 .letters { grid-area: 5 / 2 / 6 / 3; }
   
@@ -155,4 +166,14 @@
   width: 100%;
   font-size: xx-large;
   color: #412750;
+}
+
+.hangman-image-container{
+  max-width: 500px;
+  max-height: 500px;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
